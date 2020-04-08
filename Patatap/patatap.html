@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Patatap</title>
+        <link rel="stylesheet" type="text/css" href="patatap.css">
+        
+        <!-- Load the Paper.js library -->
+        <script type="text/javascript" src="paper-full.js"></script>
+
+        <!-- Define inlined PaperScript associate it with myCanvas -->
+        <script type="text/paperscript" canvas="myCanvas">
+        function onKeyDown(event) {
+          var maxPoint = new Point(view.size.width, view.size.height); // max is based on screen size
+          var randomPoint = Point.random(); // 0-.99
+          var point = maxPoint * randomPoint; // get new pt
+          new Path.Circle(point, 10).fillColor = "orange";
+        }
+
+        </script>
+    </head>
+    <body>
+
+        <canvas id="myCanvas" resize></canvas>
+
+<!--         <script type="text/javascript" src="patatap.js"></script>
+ -->    </body>
+</html>
